@@ -1,70 +1,123 @@
-# Getting Started with Create React App
+# MealSnap Lite
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+MealSnap Lite is a web application that allows users to analyze food images and get nutritional information such as calorie estimates. Simply upload a food photo, and the application will identify the food and provide nutritional details.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- Image upload and preview
+- Food type identification
+- Calorie estimation
+- Nutritional feedback
 
-### `npm start`
+## Tech Stack
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Frontend
+- React.js
+- Modern JavaScript (ES6+)
+- CSS for styling
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Backend
+- Flask (Python)
+- RESTful API architecture
+- Image processing capabilities
 
-### `npm test`
+## Installation and Setup
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Prerequisites
+- Node.js (v14+ recommended)
+- npm or yarn
+- Python 3.7+
+- pip
 
-### `npm run build`
+### Frontend Setup
+1. Clone the repository
+   ```
+   git clone https://github.com/yourusername/mealsnap-lite.git
+   cd mealsnap-lite/frontend
+   ```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+2. Install dependencies
+   ```
+   npm install
+   ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+3. Start the development server
+   ```
+   npm start
+   ```
+   This will run the app in development mode. Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Backend Setup
+1. Navigate to the backend directory
+   ```
+   cd ../backend
+   ```
 
-### `npm run eject`
+2. Create and activate a virtual environment
+   ```
+   python -m venv venv
+   source venv/bin/activate  # On Windows use: venv\Scripts\activate
+   ```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+3. Install Python dependencies
+   ```
+   pip install -r requirements.txt
+   ```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+4. Start the Flask server
+   ```
+   python app.py
+   ```
+   The backend server will start at [http://localhost:5001](http://localhost:5001).
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Usage
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+1. Open the application in your browser at [http://localhost:3000](http://localhost:3000).
+2. Click on the file input to select a food image from your device.
+3. After selecting an image, a preview will appear.
+4. Click the "Analyze Image" button to send the image to the backend for processing.
+5. View the analysis results displaying the food type, calorie count, and nutritional feedback.
 
-## Learn More
+## API Endpoints
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### `POST /analyze`
+- **Description**: Analyzes an uploaded food image
+- **Request**: Multipart form data with an 'image' field
+- **Response**: JSON object containing:
+  - `food`: Identified food type
+  - `calories`: Estimated calorie count
+  - `message`: Nutritional feedback or additional information
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Project Structure
 
-### Code Splitting
+```
+mealsnap-lite/
+├── frontend/                # React frontend application
+│   ├── public/              # Static files
+│   └── src/                 # React source code
+│       ├── App.js           # Main application component
+│       ├── index.js         # Application entry point
+│       └── index.css        # Global styles
+├── backend/                 # Flask backend server
+│   └── app.py               # Flask application
+└── README.md                # Project documentation
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Building for Production
 
-### Analyzing the Bundle Size
+To build the app for production:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```
+cd frontend
+npm run build
+```
 
-### Making a Progressive Web App
+This creates an optimized production build in the `build` folder that can be deployed to a web server.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Contributing
 
-### Advanced Configuration
+Contributions are welcome! Please feel free to submit a Pull Request.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## License
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+[MIT](https://choosealicense.com/licenses/mit/)
