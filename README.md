@@ -32,7 +32,7 @@ MealSnap Lite is a web application that allows users to analyze food images and 
 ### Frontend Setup
 1. Clone the repository
    ```
-   git clone https://github.com/yourusername/mealsnap-lite.git
+   git clone https://github.com/peoplepeople000/mealsnap-lite.git
    cd mealsnap-lite/frontend
    ```
 
